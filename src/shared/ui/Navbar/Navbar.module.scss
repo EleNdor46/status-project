@@ -1,0 +1,17 @@
+.Navbar{
+    height: var(--navbar-height);
+    width: 100%;
+    box-shadow: 0px 1px 15px 5px rgb(3, 3, 3);
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+}
+
+.item{
+margin-left: 15px;
+text-decoration: none;
+color:white;
+}

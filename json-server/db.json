@@ -1,0 +1,41 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "meditationFan",
+            "email": "fan@example.com",
+            "goals": {
+                "weeklyMeditations": 5
+            },
+            "achievements": [
+                {
+                    "title": "First Meditation",
+                    "dateUnlocked": "2023-11-01"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "zenMaster",
+            "email": "zen.master@example.com",
+            "goals": {
+                "weeklyMeditations": 7
+            },
+            "achievements": [
+                {
+                    "title": "Weekly Streak",
+                    "dateUnlocked": "2023-11-03"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "calmSeeker",
+            "email": "calm.seeker@example.com",
+            "goals": {
+                "weeklyMeditations": 3
+            },
+            "achievements": []
+        }
+    ]
+}

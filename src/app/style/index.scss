@@ -1,0 +1,14 @@
+@import './themes/dark.scss';
+@import './variables/global.scss';
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    color: white;
+}
