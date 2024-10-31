@@ -8,7 +8,6 @@ interface AppProps {
 
 export const App = memo(({ className }: AppProps) => {
     const { theme, toggleTheme } = useTheme();
-    console.log(theme)
     return (
         <div className={`app ${theme}`}>
             <Navbar />
