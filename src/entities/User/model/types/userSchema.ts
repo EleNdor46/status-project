@@ -1,7 +1,8 @@
 export interface UserShema {
     autthData?: User;
 }
-export interface User {
+export interface User{
     id: string;
-    username: string;
+    username: string
+    email: string
 }

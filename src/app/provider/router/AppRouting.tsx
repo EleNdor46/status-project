@@ -12,7 +12,11 @@ export const AppRouting = memo(({ className }: RoutingProps) => {
     return (
         <Routes>
             {Object.values(RouteConfig).map((route) => (
-                <Route path={route.path} element={route.element} />
+                <Route
+                    path={route.path}
+                    element={route.element}
+                    key={route.path}
+                />
             ))}
         </Routes>
     );
