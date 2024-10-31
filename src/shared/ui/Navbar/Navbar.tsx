@@ -5,25 +5,36 @@ import WorkIcon from "shared/widgets/icon/person-workspace.svg";
 import ArmsUpIcon from "shared/widgets/icon/person-arms-up.svg";
 import JournalIcon from "shared/widgets/icon/journal-text.svg";
 import ProfileIcon from "shared/widgets/icon/person-lines-fill.svg";
+import { useTheme } from "shared/hooks/useTheme/useTheme";
+import { Theme } from "app/provider/themeProvider/lib/themeContext";
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
     const navigate = useNavigate();
+    const { theme, toggleTheme } = useTheme();
+   
     const onHandleProfilePage = () => {
         navigate("/profile");
+        toggleTheme(Theme.DEFAULT)
     };
 
     const onHandleTragetPage = () => {
         navigate("/target");
+        toggleTheme(Theme.TARGET)
+
     };
     const onHandleHealthPage = () => {
         navigate("/health");
+        toggleTheme(Theme.HEALTH)
+
     };
 
     const onHandleIntellect = () => {
         navigate("/intellect");
+        toggleTheme(Theme.INTELLECT)
+
     };
 
     return (

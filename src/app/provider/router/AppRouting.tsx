@@ -1,8 +1,5 @@
-import { MainPage } from "pages/MainPage";
-import { ProfilePage } from "pages/ProfilePage/ui/ProfilePage";
 import { Routes, Route } from "react-router-dom";
-import cls from "./Routing.module.scss";
-import { Suspense, memo } from "react";
+import { memo } from "react";
 import { RouteConfig } from "shared/config/routerConfig";
 interface RoutingProps {
     className?: string;

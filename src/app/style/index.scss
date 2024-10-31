@@ -1,13 +1,15 @@
-@import './themes/dark.scss';
-@import './variables/global.scss';
+@import "./themes/dark.scss";
+@import "./themes/target.scss";
+@import "./themes/health.scss";
+@import "./themes/intellect.scss";
+@import "./variables/global.scss";
 
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.app{
+.app {
     background-color: var(--bg-color);
     min-height: 100vh;
     color: white;
