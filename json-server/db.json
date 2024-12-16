@@ -2,40 +2,63 @@
     "users": [
         {
             "id": 1,
-            "username": "meditationFan",
-            "email": "fan@example.com",
-            "goals": {
-                "weeklyMeditations": 5
-            },
-            "achievements": [
+            "username": "user",
+            "password": "123",
+            "goals": [
                 {
-                    "title": "First Meditation",
-                    "dateUnlocked": "2023-11-01"
+                    "targetGoals": [
+                        { "title": "learn js" },
+                        { "title": "learn questions" }
+                    ],
+                    "sportGoals": [{ "title": "go to gym" }],
+                    "intellectGoals": [{ "title": "walk on street" }]
                 }
-            ]
+            ],
+            "completed goals": {
+                "completedTargetGoals": [{ "title": "wake up" }],
+                "completedIntellectGoals": [{ "title": "read a book" }],
+                "completedSportGoals": [{ "title": "push ups " }]
+            }
         },
         {
             "id": 2,
-            "username": "zenMaster",
-            "email": "zen.master@example.com",
-            "goals": {
-                "weeklyMeditations": 7
-            },
-            "achievements": [
+            "username": "meditationFan",
+            "password": "123",
+            "goals": [
                 {
-                    "title": "Weekly Streak",
-                    "dateUnlocked": "2023-11-03"
+                    "targetGoals": [
+                        { "title": "learn js" },
+                        { "title": "learn questions" }
+                    ],
+                    "sportGoals": [{ "title": "go to gym" }],
+                    "intellectGoals": [{ "title": "walk on street" }]
                 }
-            ]
+            ],
+            "completed goals": {
+                "completedTargetGoals": [{ "title": "wake up" }],
+                "completedIntellectGoals": [{ "title": "read a book" }],
+                "completedSportGoals": [{ "title": "push ups " }]
+            }
         },
         {
             "id": 3,
-            "username": "calmSeeker",
-            "email": "calm.seeker@example.com",
-            "goals": {
-                "weeklyMeditations": 3
-            },
-            "achievements": []
+            "username": "meditationFan",
+            "password": "123",
+            "goals": [
+                {
+                    "targetGoals": [
+                        { "title": "learn js" },
+                        { "title": "learn questions" }
+                    ],
+                    "sportGoals": [{ "title": "go to gym" }],
+                    "intellectGoals": [{ "title": "walk on street" }]
+                }
+            ],
+            "completed goals": {
+                "completedTargetGoals": [{ "title": "wake up" }],
+                "completedIntellectGoals": [{ "title": "read a book" }],
+                "completedSportGoals": [{ "title": "push ups " }]
+            }
         }
     ]
 }

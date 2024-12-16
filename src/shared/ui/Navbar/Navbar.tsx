@@ -14,7 +14,11 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
-   
+
+    
+
+
+
     const onHandleProfilePage = () => {
         navigate("/profile");
         toggleTheme(Theme.DEFAULT)
