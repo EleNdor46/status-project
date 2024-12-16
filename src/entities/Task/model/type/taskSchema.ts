@@ -1,6 +1,6 @@
 export interface Task {
     id: string;
     lable: string;
-    favourites: boolean;
+    favourites?: boolean;
     done?: boolean;
 }
