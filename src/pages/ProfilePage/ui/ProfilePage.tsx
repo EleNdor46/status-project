@@ -3,12 +3,15 @@ import { useTheme } from "shared/hooks/useTheme/useTheme";
 import cls from "./ProfilePage.module.scss";
 import { memo, useEffect } from "react";
 import { Page } from "shared/ui/Page/Page";
+import { ProfileCard } from "features/ProfileCard/ui/ProfileCard";
+import { useParams } from "react-router-dom";
 interface ProfilePageProps {
     className?: string;
 }
 
 export const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { theme, toggleTheme } = useTheme();
+    const { id } = useParams();
 
     useEffect(() => {
         if (theme !== Theme.DEFAULT) {
@@ -18,11 +21,8 @@ export const ProfilePage = memo(({ className }: ProfilePageProps) => {
 
     return (
         <Page className={cls.ProfilePage}>
-            <div className={cls.profileCard}>
-                <div className={cls.userName}>
-                    <h3>EleNdor</h3>
-                </div>
-            </div>
+            
+            <ProfileCard id={id} />
         </Page>
     );
 });

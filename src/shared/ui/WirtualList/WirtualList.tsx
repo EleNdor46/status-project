@@ -3,7 +3,7 @@ import cls from "./WirtualList.module.scss";
 import { memo } from "react";
 interface WirtualListProps {
     className?: string;
-    list: Array<Task>;
+    list: Task[];
 }
 
 export const WirtualList = memo(({ className, list }: WirtualListProps) => {

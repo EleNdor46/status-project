@@ -1,27 +1,37 @@
 {
     "users": [
         {
-            "id": 1,
-            "username": "user",
+            "id": "1",
+            "username": "EleNdor",
             "password": "123",
             "goals": [
                 {
                     "targetGoals": [
-                        { "title": "learn js" },
-                        { "title": "learn questions" }
+                        { "title": "learn js", "id": "1", "done": false },
+                        { "title": "learn questions", "id": "2", "done": false }
                     ],
-                    "sportGoals": [{ "title": "go to gym" }],
-                    "intellectGoals": [{ "title": "walk on street" }]
+                    "sportGoals": [
+                        { "title": "go to gym", "id": "3", "done": false }
+                    ],
+                    "intellectGoals": [
+                        { "title": "walk on street", "id": "4", "done": false }
+                    ]
                 }
             ],
-            "completed goals": {
-                "completedTargetGoals": [{ "title": "wake up" }],
-                "completedIntellectGoals": [{ "title": "read a book" }],
-                "completedSportGoals": [{ "title": "push ups " }]
+            "completedGoals": {
+                "completedTargetGoals": [
+                    { "title": "wake up", "id": "5", "done": true }
+                ],
+                "completedIntellectGoals": [
+                    { "title": "read a book", "id": "6", "done": true }
+                ],
+                "completedSportGoals": [
+                    { "title": "push ups ", "id": "7", "done": true }
+                ]
             }
         },
         {
-            "id": 2,
+            "id": "2",
             "username": "meditationFan",
             "password": "123",
             "goals": [
@@ -41,7 +51,7 @@
             }
         },
         {
-            "id": 3,
+            "id": "3",
             "username": "meditationFan",
             "password": "123",
             "goals": [

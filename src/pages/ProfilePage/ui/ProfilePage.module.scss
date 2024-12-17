@@ -4,21 +4,3 @@
     align-items: center;
 }
 
-.profileCard {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    width: 50vw;
-    height: 50vh;
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-}
-.userName {
-    width: 90%;
-    margin-top: 30px;
-    border-bottom: 0.5px solid var(--border-color-secondary);
-    text-align: center;
-
-   
-}

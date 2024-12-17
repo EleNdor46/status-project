@@ -29,7 +29,7 @@ export const RouteConfig = {
         element: <IntellectPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: RoutePath.profile,
+        path: `${RoutePath.profile}/:id`,
         element: <ProfilePage />,
     },
 };
