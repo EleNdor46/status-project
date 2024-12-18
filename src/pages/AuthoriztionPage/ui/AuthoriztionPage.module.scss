@@ -1,0 +1,76 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 30vh;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    position: relative;
+}
+.label {
+    width: 90%;
+    margin-top: 30px;
+    border-bottom: 0.5px solid var(--border-color-secondary);
+    text-align: center;
+}
+.dataInput {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+}
+.input {
+    background-color: transparent;
+    color: var(--border-color);
+    border: none;
+    margin-left: 15px;
+    height: 30px;
+    border-bottom: 1px solid var((--border-color));
+
+    outline: none;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+}
+.singInBtn {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    color: var(--border-color);
+    border: 1px solid var((--border-color));
+    outline: none;
+
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(187, 187, 187, 0.301);
+        transition: 0.3s;
+    }
+    &:active {
+        background-color: black;
+        transition: 0.3s;
+    }
+}
