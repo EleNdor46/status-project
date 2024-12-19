@@ -3,7 +3,7 @@ import { Task } from "entities/Task";
 export interface User {
     id?: string;
     username?: string;
-    email?: string;
+    password?:string
     goals?: [
         {
             targetGoals: Task[];

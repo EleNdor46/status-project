@@ -37,7 +37,7 @@ export const RouteConfig = {
         element: <IntellectPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: `${RoutePath.profile}/:id`,
+        path: `${RoutePath.profile}`,
         element: <ProfilePage />,
     },
     //

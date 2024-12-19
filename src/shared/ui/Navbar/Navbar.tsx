@@ -7,6 +7,8 @@ import JournalIcon from "shared/widgets/icon/journal-text.svg";
 import ProfileIcon from "shared/widgets/icon/person-lines-fill.svg";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
+import { useSelector } from "react-redux";
+import { getUserId } from "entities/User/model/selector/getUserData";
 interface NavbarProps {
     className?: string;
 }
@@ -14,31 +16,29 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
-
-    
-
-
+    const inited = useSelector(getUserId);
 
     const onHandleProfilePage = () => {
-        navigate("/profile");
-        toggleTheme(Theme.DEFAULT)
+        if (inited) {
+            navigate("/profile");
+        } else {
+            navigate("/authorization");
+        }
+        toggleTheme(Theme.DEFAULT);
     };
 
     const onHandleTragetPage = () => {
         navigate("/target");
-        toggleTheme(Theme.TARGET)
-
+        toggleTheme(Theme.TARGET);
     };
     const onHandleHealthPage = () => {
         navigate("/health");
-        toggleTheme(Theme.HEALTH)
-
+        toggleTheme(Theme.HEALTH);
     };
 
     const onHandleIntellect = () => {
         navigate("/intellect");
-        toggleTheme(Theme.INTELLECT)
-
+        toggleTheme(Theme.INTELLECT);
     };
 
     return (

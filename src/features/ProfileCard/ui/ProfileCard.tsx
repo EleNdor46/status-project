@@ -2,14 +2,17 @@ import { classNames } from "shared/lib/classNames";
 import cls from "./ProfileCard.module.scss";
 import { memo } from "react";
 import { useUsers } from "../api/getUserProfileApi";
+import { useSelector } from "react-redux";
+import { getUserId } from "entities/User/model/selector/getUserData";
 
 interface ProfileCardProps {
     className?: string;
-    id?: string;
 }
 
-export const ProfileCard = memo(({ className, id = "1" }: ProfileCardProps) => {
-    const { isLoading, error, data } = useUsers(id);
+export const ProfileCard = memo(({ className }: ProfileCardProps) => {
+
+    const userId = useSelector(getUserId);
+    // const { isLoading, error, data } = useUsers(userId);
 
     return (
         <div className={classNames(cls.profileCard, {}, [className])}>
