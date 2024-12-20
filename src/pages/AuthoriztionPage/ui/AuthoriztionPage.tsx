@@ -12,6 +12,7 @@ import {
     getLoginUsername,
 } from "features/AuthoriztionCard/model/selector/getLoginSelector";
 import { loginByUsername } from "features/AuthoriztionCard/model/services/loginByUsername";
+import { useNavigate } from "react-router-dom";
 interface AuthoriztionPageProps {
     className?: string;
 }
@@ -21,7 +22,7 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
     const password = useSelector(getLoginPassword);
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { theme, toggleTheme } = useTheme();
     useEffect(() => {
@@ -40,6 +41,10 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
 
     const onSubmitLogin = useCallback(async () => {
         const result = await dispatch(loginByUsername({ password, username }));
+        //@ts-ignore
+        if (result.meta.requestStatus == "fulfilled") {
+            navigate("/profile");
+        }
     }, [dispatch, password, username]);
 
     return (

@@ -10,9 +10,7 @@ interface ProfileCardProps {
 }
 
 export const ProfileCard = memo(({ className }: ProfileCardProps) => {
-
     const userId = useSelector(getUserId);
-    // const { isLoading, error, data } = useUsers(userId);
 
     return (
         <div className={classNames(cls.profileCard, {}, [className])}>

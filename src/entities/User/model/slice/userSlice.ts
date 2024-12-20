@@ -17,21 +17,25 @@ const userSlice = createSlice({
             state.completedGoals = action.payload.completedGoals;
             state.goals = action.payload.goals;
             state.password = action.payload.password;
-            localStorage.setItem(
-                USER_LOCALSTORAGE_KEY,
-                JSON.stringify({
-                    username: state.username,
-                    password: state.password,
-                })
-            );
+            const user: User = {
+                username: state.username,
+                password: state.password,
+                id: state.id,
+                completedGoals: state.completedGoals,
+                goals: state.goals,
+            };
+            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(user));
         },
         initUserData: (state) => {
             if (localStorage.getItem(USER_LOCALSTORAGE_KEY)) {
-                const user: User = JSON.parse(
+                const user = JSON.parse(
                     localStorage.getItem(USER_LOCALSTORAGE_KEY) as string
                 );
-                state.username = user.username;
                 state.id = user.id;
+                state.username = user.username;
+                state.completedGoals = user.completedGoals;
+                state.goals = user.goals;
+                state.password = user.password;
             }
         },
     },
