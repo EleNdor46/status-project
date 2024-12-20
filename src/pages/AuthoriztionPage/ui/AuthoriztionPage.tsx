@@ -1,16 +1,28 @@
 import cls from "./AuthoriztionPage.module.scss";
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect } from "react";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Page } from "shared/ui/Page/Page";
+import { useDispatch, useSelector } from "react-redux";
+import { loginActions } from "features/AuthoriztionCard/model/slice/loginSlice";
+import {
+    getLoginError,
+    getLoginIsLoading,
+    getLoginPassword,
+    getLoginUsername,
+} from "features/AuthoriztionCard/model/selector/getLoginSelector";
+import { loginByUsername } from "features/AuthoriztionCard/model/services/loginByUsername";
 interface AuthoriztionPageProps {
     className?: string;
 }
 
 export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const error = useSelector(getLoginError);
+    const isLoading = useSelector(getLoginIsLoading);
 
+    const dispatch = useDispatch();
     const { theme, toggleTheme } = useTheme();
     useEffect(() => {
         if (theme !== Theme.DEFAULT) {
@@ -19,15 +31,16 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
     }, []);
 
     const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUsername(e.target.value);
-    };
-    const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(e.target.value);
+        dispatch(loginActions.setUsername(e.target.value));
     };
 
-    const onSubmit = () => {
-        console.log(1);
+    const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(loginActions.setPassword(e.target.value));
     };
+
+    const onSubmitLogin = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ password, username }));
+    }, [dispatch, password, username]);
 
     return (
         <Page className={cls.page}>
@@ -53,7 +66,11 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
                         />
                     </div>
                 </div>
-                <button className={cls.singInBtn} onClick={onSubmit}>
+                <button
+                    className={cls.singInBtn}
+                    onClick={onSubmitLogin}
+                    disabled={isLoading}
+                >
                     Sing In
                 </button>
             </div>
