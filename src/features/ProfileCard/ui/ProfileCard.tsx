@@ -7,6 +7,7 @@ import {
     getUserGoals,
     getUsername,
 } from "entities/User/model/selector/getUserData";
+import { CircularProgressBar } from "shared/ui/CircularProgressBar/CircularProgressBar";
 
 interface ProfileCardProps {
     className?: string;
@@ -45,6 +46,7 @@ export const ProfileCard = memo(({ className }: ProfileCardProps) => {
                 <span>выполненых задач - {getCompletedGolsCount}</span>
                 <span>нынешняя серия дней - SOON...</span>
                 <span> максимальная серия дней - SOON...</span>
+                <CircularProgressBar value={55} />
             </div>
         </div>
     );

@@ -4,6 +4,8 @@ import cls from "./TargetPage.module.scss";
 import { memo, useEffect } from "react";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
+import { Page } from "shared/ui/Page/Page";
+import { ProgressForm } from "features/ProgressForm/ui/ProgressForm";
 interface TargetPageProps {
     className?: string;
 }
@@ -18,9 +20,9 @@ export const TargetPage = memo(({ className }: TargetPageProps) => {
     }, []);
 
     return (
-        <div className={cls.TargetPage}>
-            <WirtualList list={healthTask} />
-        </div>
+        <Page className={cls.TargetPage}>
+            <ProgressForm />
+            <WirtualList list={healthTask} className={cls.list} />
+        </Page>
     );
 });
-// export default TargetPage;

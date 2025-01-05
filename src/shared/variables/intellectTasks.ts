@@ -31,4 +31,28 @@ export const healthTask: Task[] = [
         lable: "написать проект",
         done: false,
     },
+    {
+        id: "6",
+        favourites: false,
+        lable: "написать проект",
+        done: false,
+    },
+    {
+        id: "7",
+        favourites: false,
+        lable: "написать проект",
+        done: false,
+    },
+    {
+        id: "8",
+        favourites: false,
+        lable: "написать проект",
+        done: false,
+    },
+    {
+        id: "9",
+        favourites: false,
+        lable: "написать проект",
+        done: false,
+    },
 ];

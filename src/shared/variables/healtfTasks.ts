@@ -24,4 +24,17 @@ export const healthTask = [
         favourites: false,
         lable: "плавание",
     },
+    {
+        id: "6",
+        favourites: false,
+        lable: "плавание",
+    },{
+        id: "7",
+        favourites: false,
+        lable: "плавание",
+    },{
+        id: "8",
+        favourites: false,
+        lable: "плавание",
+    },
 ];

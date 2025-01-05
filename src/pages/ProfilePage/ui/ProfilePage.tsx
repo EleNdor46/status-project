@@ -4,6 +4,7 @@ import cls from "./ProfilePage.module.scss";
 import { memo, useEffect } from "react";
 import { Page } from "shared/ui/Page/Page";
 import { ProfileCard } from "features/ProfileCard/ui/ProfileCard";
+import { CircularProgressBar } from "shared/ui/CircularProgressBar/CircularProgressBar";
 interface ProfilePageProps {
     className?: string;
 }
@@ -20,6 +21,7 @@ export const ProfilePage = memo(({ className }: ProfilePageProps) => {
     return (
         <Page className={cls.ProfilePage}>
             <ProfileCard />
+            
         </Page>
     );
 });
