@@ -4,6 +4,7 @@ import { userReducers } from "entities/User/model/slice/userSlice";
 import { userApi } from "features/ProfileCard/api/getUserProfileApi";
 import { loginReducers } from "features/AuthoriztionCard/model/slice/loginSlice";
 import { AxiosInstance } from "axios";
+import { progressFormReducers } from "features/ProgressForm/model/slice/progressFormSlice";
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -13,6 +14,7 @@ export const createReduxStore = (
         ...asyncReducers,
         user: userReducers,
         login: loginReducers,
+        progressForm: progressFormReducers,
         ///
         [userApi.reducerPath]: userApi.reducer,
     };

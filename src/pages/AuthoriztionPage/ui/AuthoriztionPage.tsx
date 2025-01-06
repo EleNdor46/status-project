@@ -13,6 +13,7 @@ import {
 } from "features/AuthoriztionCard/model/selector/getLoginSelector";
 import { loginByUsername } from "features/AuthoriztionCard/model/services/loginByUsername";
 import { useNavigate } from "react-router-dom";
+import { Input } from "shared/ui/Input/Input";
 interface AuthoriztionPageProps {
     className?: string;
 }
@@ -31,13 +32,19 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
         }
     }, []);
 
-    const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(loginActions.setUsername(e.target.value));
-    };
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch]
+    );
 
-    const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(loginActions.setPassword(e.target.value));
-    };
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch]
+    );
 
     const onSubmitLogin = useCallback(async () => {
         const result = await dispatch(loginByUsername({ password, username }));
@@ -53,21 +60,21 @@ export const AuthoriztionPage = memo(({ className }: AuthoriztionPageProps) => {
                 <div className={cls.label}>Sing In</div>
                 <div className={cls.dataInput}>
                     <div className={cls.userName}>
-                        <input
+                        <Input
                             type="text"
                             placeholder="Login"
                             className={cls.input}
                             value={username}
-                            onChange={(e) => onChangeUsername(e)}
+                            onChange={onChangeUsername}
                         />
                     </div>
                     <div className={cls.password}>
-                        <input
+                        <Input
                             type="text"
                             placeholder="Password"
                             className={cls.input}
                             value={password}
-                            onChange={(e) => onChangePassword(e)}
+                            onChange={onChangePassword}
                         />
                     </div>
                 </div>

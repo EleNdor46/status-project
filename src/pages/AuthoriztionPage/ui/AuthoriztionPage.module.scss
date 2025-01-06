@@ -29,21 +29,7 @@
     height: 100%;
     gap: 30px;
 }
-.input {
-    background-color: transparent;
-    color: var(--border-color);
-    border: none;
-    margin-left: 15px;
-    height: 30px;
-    border-bottom: 1px solid var((--border-color));
 
-    outline: none;
-    width: 100%;
-
-    &:focus {
-        outline: none;
-    }
-}
 .singInBtn {
     position: absolute;
     right: 0px;
