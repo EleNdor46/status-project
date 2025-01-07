@@ -6,14 +6,9 @@ import {
     CircularProgressBar,
 } from "shared/ui/CircularProgressBar/CircularProgressBar";
 import { Input } from "shared/ui/Input/Input";
-import { useParams } from "react-router-dom";
 import { orderPage } from "shared/const/orderPage";
-import { useDispatch, useSelector } from "react-redux";
-import {
-    getProgressFormHealth,
-    getProgressFormIntellect,
-    getProgressFormTarget,
-} from "../model/selector/progressFormSelectors";
+import { useDispatch } from "react-redux";
+
 interface ProgressFormProps {
     className?: string;
     order: orderPage;
@@ -21,18 +16,6 @@ interface ProgressFormProps {
 
 export const ProgressForm = memo(({ className, order }: ProgressFormProps) => {
     const dispatch = useDispatch();
-
-
-
-    if (order === orderPage.TARGET_PAGE) {
-        const targetForm = useSelector(getProgressFormTarget);
-    }
-    if (order === orderPage.INTELLECT_PAGE) {
-        const intellectForm = useSelector(getProgressFormIntellect);
-    }
-    if (order === orderPage.HEALTH_PAGE) {
-        const healthForm = useSelector(getProgressFormHealth);
-    }
 
     return (
         <div className={classNames(cls.ProgressForm, {}, [className])}>

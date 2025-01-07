@@ -1,7 +1,7 @@
+import { ProgressFormSchema } from "entities/ProgressForm/model/type/ProgressFormSchema";
 import { User } from "entities/User";
 import { loginSchema } from "features/AuthoriztionCard/model/types/loginShema";
 import { userApi } from "features/ProfileCard/api/getUserProfileApi";
-import { ProgressFormSchema } from "features/ProgressForm/model/type/ProgressFormSchema";
 
 export interface StateSchema {
     user: User;
