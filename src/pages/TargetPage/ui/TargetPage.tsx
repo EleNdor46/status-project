@@ -7,6 +7,7 @@ import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Page } from "shared/ui/Page/Page";
 import { ProgressForm } from "shared/ui/ProgressForm/ui/ProgressForm";
 import { orderPage } from "shared/const/orderPage";
+import { TargetForm } from "features/TargetForm/ui/TargetForm";
 interface TargetPageProps {
     className?: string;
 }
@@ -22,7 +23,7 @@ export const TargetPage = memo(({ className }: TargetPageProps) => {
 
     return (
         <Page className={cls.TargetPage}>
-            <ProgressForm order={orderPage.TARGET_PAGE} />
+            <TargetForm/>
             <WirtualList list={healthTask} className={cls.list} />
         </Page>
     );

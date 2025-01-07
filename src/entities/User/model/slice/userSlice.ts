@@ -5,6 +5,16 @@ import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorageKey";
 const initialState: User = {
     id: undefined,
     username: undefined,
+    completedGoals: {
+        completedTargetGoals: [],
+        completedIntellectGoals: [],
+        completedSportGoals: [],
+    },
+    goals: {
+        intellectGoals: [],
+        sportGoals: [],
+        targetGoals: [],
+    },
 };
 
 const userSlice = createSlice({

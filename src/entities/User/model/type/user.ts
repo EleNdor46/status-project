@@ -4,14 +4,14 @@ export interface User {
     id?: string;
     username?: string;
     password?:string
-    goals?: 
+    goals: 
         {
             targetGoals: Task[];
             sportGoals: Task[];
             intellectGoals: Task[];
         }
     ;
-    completedGoals?: {
+    completedGoals: {
         completedTargetGoals: Task[];
         completedIntellectGoals: Task[];
         completedSportGoals: Task[];
