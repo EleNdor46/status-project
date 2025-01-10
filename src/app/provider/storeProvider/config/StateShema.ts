@@ -1,14 +1,18 @@
+import { completedTaskSchema } from 'entities/CompletedTask';
 import { ProgressFormSchema } from "entities/ProgressForm/model/type/ProgressFormSchema";
-import { User } from "entities/User";
+import { taskSchema } from "entities/Task/model/type/taskSchema";
+import { UserSchema } from "entities/User/model/type/user";
 import { loginSchema } from "features/AuthoriztionCard/model/types/loginShema";
 import { userApi } from "features/ProfileCard/api/getUserProfileApi";
 import { targetFormSchema } from "features/TargetForm";
 
 export interface StateSchema {
-    user: User;
+    user: UserSchema;
     login: loginSchema;
     progressForm: ProgressFormSchema;
-    targetForm:targetFormSchema
+    targetForm:targetFormSchema,
+    task:taskSchema,
+    completedTask:completedTaskSchema
     //@ts-ignore
     [userApi.reducerPath]: ReturnType<userApi.reducer>;
     //

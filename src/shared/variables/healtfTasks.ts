@@ -1,40 +1,68 @@
-export const healthTask = [
+import { Task, taskType } from "entities/Task";
+
+export const healthTask: Task[] = [
     {
         id: "1",
         favourites: false,
-        lable: "качалка",
+        title: "качалка",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
     {
         id: "2",
         favourites: false,
-        lable: "пробежка",
+        title: "пробежка",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
     {
         id: "3",
         favourites: false,
-        lable: "прогулка",
+        title: "прогулка",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
     {
         id: "4",
         favourites: false,
-        lable: "отжимания",
+        title: "отжимания",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
     {
         id: "5",
         favourites: false,
-        lable: "плавание",
+        title: "плавание",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
     {
         id: "6",
         favourites: false,
-        lable: "плавание",
-    },{
+        title: "плавание",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
+    },
+    {
         id: "7",
         favourites: false,
-        lable: "плавание",
-    },{
+        title: "плавание",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
+    },
+    {
         id: "8",
         favourites: false,
-        lable: "плавание",
+        title: "плавание",
+        done: false,
+        type: taskType.TARGET,
+        userId: "1",
     },
 ];

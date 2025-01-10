@@ -1,9 +1,9 @@
 import { WirtualList } from "shared/ui/WirtualList/WirtualList";
 import cls from "./IntellectPage.module.scss";
 import { memo, useEffect } from "react";
-import { healthTask } from "shared/variables/intellectTasks";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
+import { healthTask } from "shared/variables/healtfTasks";
 interface IntellectPageProps {
     className?: string;
 }

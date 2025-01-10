@@ -3,157 +3,59 @@
         {
             "id": "1",
             "username": "EleNdor",
-            "password": "123",
-            "goals": {
-                "targetGoals": [
-                    {
-                        "title": "learn js",
-                        "id": "1",
-                        "done": false
-                    },
-                    {
-                        "title": "learn questions",
-                        "id": "2",
-                        "done": false
-                    }
-                ],
-                "sportGoals": [
-                    {
-                        "title": "go to gym",
-                        "id": "3",
-                        "done": false
-                    }
-                ],
-                "intellectGoals": [
-                    {
-                        "title": "walk on street",
-                        "id": "4",
-                        "done": false
-                    }
-                ]
-            },
-            "completedGoals": {
-                "completedTargetGoals": [
-                    {
-                        "title": "wake up",
-                        "id": "5",
-                        "done": true
-                    }
-                ],
-                "completedIntellectGoals": [
-                    {
-                        "title": "read a book",
-                        "id": "6",
-                        "done": true
-                    }
-                ],
-                "completedSportGoals": [
-                    {
-                        "title": "push ups ",
-                        "id": "7",
-                        "done": true
-                    }
-                ]
-            }
+            "password": "123"
         },
         {
             "id": "2",
-            "username": "meditationFan",
-            "password": "123",
-            "goals": {
-                "targetGoals": [
-                    {
-                        "title": "learn js"
-                    },
-                    {
-                        "title": "learn questions"
-                    }
-                ],
-                "sportGoals": [
-                    {
-                        "title": "go to gym"
-                    }
-                ],
-                "intellectGoals": [
-                    {
-                        "title": "walk on street"
-                    }
-                ]
-            },
-            "completed goals": {
-                "completedTargetGoals": [
-                    {
-                        "title": "wake up"
-                    }
-                ],
-                "completedIntellectGoals": [
-                    {
-                        "title": "read a book"
-                    }
-                ],
-                "completedSportGoals": [
-                    {
-                        "title": "push ups "
-                    }
-                ]
-            }
-        },
+            "username": "user",
+            "password": "123"
+        }
+    ],
+
+    "completedGoals": [
         {
             "id": "3",
-            "username": "meditationFan",
-            "password": "123",
-            "goals": {
-                "targetGoals": [
-                    {
-                        "title": "learn js"
-                    },
-                    {
-                        "title": "learn questions"
-                    }
-                ],
-                "sportGoals": [
-                    {
-                        "title": "go to gym"
-                    }
-                ],
-                "intellectGoals": [
-                    {
-                        "title": "walk on street"
-                    }
-                ]
-            },
-            "completed goals": {
-                "completedTargetGoals": [
-                    {
-                        "title": "wake up"
-                    }
-                ],
-                "completedIntellectGoals": [
-                    {
-                        "title": "read a book"
-                    }
-                ],
-                "completedSportGoals": [
-                    {
-                        "title": "push ups "
-                    }
-                ]
-            }
+            "userId": "1",
+            "title": "read a book",
+            "done": true,
+            "type": "target"
         },
         {
-            "password": "",
-            "username": "",
-            "id": "9eFdHze"
+            "id": "4",
+            "userId": "1",
+            "title": "read a book",
+            "done": true,
+            "type": "intellect"
         },
         {
-            "password": "",
-            "username": "",
-            "id": "455abi-"
+            "id": "5",
+            "userId": "1",
+            "title": "read a book",
+            "done": true,
+            "type": "health"
+        }
+    ],
+    "goals": [
+        {
+            "id": "6",
+            "userId": "1",
+            "title": "push ups",
+            "done": false,
+            "type": "target"
         },
         {
-            "password": "",
-            "username": "",
-            "id": "CUQs5Dw"
+            "id": "7",
+            "userId": "1",
+            "title": "push ups",
+            "done": false,
+            "type": "intellect"
+        },
+        {
+            "id": "8",
+            "userId": "2",
+            "title": "push ups",
+            "done": false,
+            "type": "health"
         }
     ]
 }

@@ -6,6 +6,9 @@ import { loginReducers } from "features/AuthoriztionCard/model/slice/loginSlice"
 import { AxiosInstance } from "axios";
 import { progressFormReducers } from "entities/ProgressForm/model/slice/ProgressFormSlice";
 import { targetFormReducers } from "features/TargetForm";
+import { taskReducers } from "entities/Task/model/slice/taskSlice";
+import { $api } from "shared/api/api";
+import { completedTaskReducers } from "entities/CompletedTask";
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -17,6 +20,8 @@ export const createReduxStore = (
         login: loginReducers,
         progressForm: progressFormReducers,
         targetForm: targetFormReducers,
+        task: taskReducers,
+        completedTask:completedTaskReducers,
         ///
         [userApi.reducerPath]: userApi.reducer,
     };
@@ -26,7 +31,13 @@ export const createReduxStore = (
         devTools: true,
         preloadedState: initialState,
         middleware: (getDefaultMiddleWare) =>
-            getDefaultMiddleWare().concat(userApi.middleware),
+            getDefaultMiddleWare({
+                thunk: {
+                    extraArgument: {
+                        api: $api,
+                    },
+                },
+            }).concat(userApi.middleware),
     });
     return store;
 };

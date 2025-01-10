@@ -5,10 +5,12 @@ const initialState: targetFormSchema = {
     targetGoals: [],
     completedTargetGoals: [],
     progressValue: 0,
+    error: undefined,
+    isLoading: false,
 };
 
 const targetFormSlice = createSlice({
-    name: "login",
+    name: "targetForm",
     initialState,
     reducers: {
         getProgressValue: (state) => {
@@ -27,6 +29,22 @@ const targetFormSlice = createSlice({
             state.completedTargetGoals = action.payload.completedTargetGoals;
         },
     },
+    // extraReducers: (builder) => {
+    //     builder.addCase(addTargetTask.pending, (state) => {
+    //         state.error = undefined;
+    //         state.isLoading = true;
+    //     });
+
+    //     builder.addCase(addTargetTask.fulfilled, (state , acton) => {
+            
+    //         state.isLoading = false;
+    //     });
+
+    //     builder.addCase(addTargetTask.rejected, (state, action) => {
+    //         state.isLoading = false;
+    //         state.error = action.payload;
+    //     });
+    // },
 });
 
 export const { reducer: targetFormReducers } = targetFormSlice;

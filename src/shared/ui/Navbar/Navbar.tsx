@@ -8,7 +8,7 @@ import ProfileIcon from "shared/widgets/icon/person-lines-fill.svg";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
 import { useSelector } from "react-redux";
-import { getUserId } from "entities/User/model/selector/getUserData";
+import { getAuthData } from "entities/User/model/selector/getUserData";
 interface NavbarProps {
     className?: string;
 }
@@ -16,7 +16,7 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
-    const inited = useSelector(getUserId);
+    const inited = useSelector(getAuthData);
 
     const onHandleProfilePage = () => {
         if (inited) {

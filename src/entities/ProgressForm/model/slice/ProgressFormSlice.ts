@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ProgressFormSchema } from "../type/ProgressFormSchema";
 const initialState: ProgressFormSchema = {
-    healthForm: "",
-    intellectForm: "",
-    targetForm: "",
+    healthForm: undefined,
+    intellectForm: undefined,
+    targetForm: undefined,
 };
 
 const progressFormSlice = createSlice({
-    name: "login",
+    name: "progressForm",
     initialState,
     reducers: {
         setHealthForm: (state, action: PayloadAction<string>) => {

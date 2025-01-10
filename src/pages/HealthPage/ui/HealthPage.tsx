@@ -1,9 +1,9 @@
 import { WirtualList } from "shared/ui/WirtualList/WirtualList";
 import cls from "./HealthPage.module.scss";
 import { memo, useEffect } from "react";
-import { healthTask } from "shared/variables/intellectTasks";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
+import { healthTask } from "shared/variables/healtfTasks";
 interface HealthPageProps {
     className?: string;
 }

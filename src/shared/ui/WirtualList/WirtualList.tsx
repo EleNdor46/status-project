@@ -12,7 +12,7 @@ export const WirtualList = memo(({ className, list }: WirtualListProps) => {
         <div className={classNames(cls.WirtualList, {}, [className])}>
             {list.map((item: Task) => (
                 <div key={item.id} className={cls.item}>
-                    <span> {item.lable} </span>
+                    <span> {item.title} </span>
                 </div>
             ))}
         </div>

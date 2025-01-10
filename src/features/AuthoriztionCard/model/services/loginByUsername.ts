@@ -19,7 +19,14 @@ export const loginByUsername = createAsyncThunk<
     console.log(thunkAPI);
 
     try {
-        const response = await axios.post<User>("http://localhost:8000/login", user);
+        if (!user.username && !user.password) {
+            throw new Error();
+        }
+
+        const response = await axios.post<User>(
+            "http://localhost:8000/login",
+            user
+        );
 
         if (!response.data) {
             throw new Error();

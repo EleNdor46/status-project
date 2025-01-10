@@ -1,23 +1,21 @@
 import { classNames } from "shared/lib/classNames";
 import cls from "./ProgressForm.module.scss";
-import { memo, useCallback } from "react";
+import { memo } from "react";
 import {
     CircularBarTheme,
     CircularProgressBar,
 } from "shared/ui/CircularProgressBar/CircularProgressBar";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch } from "react-redux";
 
 interface ProgressFormProps {
     className?: string;
     value?: number;
     onChange?: (value: string) => void;
+    onClickBtn?:()=>void
 }
 
 export const ProgressForm = memo(
-    ({ className, value, onChange }: ProgressFormProps) => {
-        const dispatch = useDispatch();
-
+    ({ className, value, onChange ,onClickBtn }: ProgressFormProps) => {
         return (
             <div className={classNames(cls.ProgressForm, {}, [className])}>
                 <div className={cls.ProgressBar}>
@@ -35,6 +33,7 @@ export const ProgressForm = memo(
                         onChange={onChange}
                     />
                 </div>
+                <button className={cls.btn} onClick={onClickBtn}>Add</button>
             </div>
         );
     }
