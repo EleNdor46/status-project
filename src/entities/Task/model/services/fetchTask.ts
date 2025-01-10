@@ -13,7 +13,6 @@ export const fetchTask = createAsyncThunk<
 
     const user = getAuthData(getState());
     const userId = user?.id;
-    console.log(userId)
     try {
         const response = await extra.api.get<Task[]>(
             "http://localhost:8000/goals",

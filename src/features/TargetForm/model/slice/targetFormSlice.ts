@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { targetFormSchema } from "../type/targetFormSchema";
+import { Task, taskType } from "entities/Task";
+import { completedTask } from "entities/CompletedTask/model/type/completedTaskSchema";
 const initialState: targetFormSchema = {
-    targetGoals: [],
-    completedTargetGoals: [],
     progressValue: 0,
     error: undefined,
     isLoading: false,
@@ -13,20 +13,24 @@ const targetFormSlice = createSlice({
     name: "targetForm",
     initialState,
     reducers: {
-        getProgressValue: (state) => {
-            const allTasksValue =
-                state.completedTargetGoals?.length + state.targetGoals?.length;
-            state.progressValue = Number(
-                (
-                    (state.completedTargetGoals.length / allTasksValue) *
-                    100
-                ).toFixed(0)
+        getProgressValue: (
+            state,
+            action: PayloadAction<{
+                task: Task[];
+                completedTask: completedTask[];
+            }>
+        ) => {
+            const targetTasks = action.payload.task.filter(
+                (task: Task) => task.type === taskType.TARGET
             );
-            console.log(allTasksValue);
-        },
-        setTargetTasks: (state, action: PayloadAction<targetFormSchema>) => {
-            state.targetGoals = action.payload.targetGoals;
-            state.completedTargetGoals = action.payload.completedTargetGoals;
+            const targetCompletedTasks = action.payload.completedTask.filter(
+                (task: Task) => task.type === taskType.TARGET
+            );
+            const valueAllTasks =
+                targetTasks.length + targetCompletedTasks.length;
+            state.progressValue = Number(
+                ((targetCompletedTasks.length / valueAllTasks) * 100).toFixed(0)
+            );
         },
     },
     // extraReducers: (builder) => {
@@ -36,7 +40,7 @@ const targetFormSlice = createSlice({
     //     });
 
     //     builder.addCase(addTargetTask.fulfilled, (state , acton) => {
-            
+
     //         state.isLoading = false;
     //     });
 

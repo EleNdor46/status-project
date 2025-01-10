@@ -5,6 +5,8 @@ import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "entities/User/model/slice/userSlice";
 import { getAuthData } from "entities/User";
+import { fetchComletedTask } from "entities/CompletedTask";
+import { fetchTask } from "entities/Task/model/services/fetchTask";
 interface AppProps {
     className?: string;
 }
@@ -17,6 +19,8 @@ export const App = memo(({ className }: AppProps) => {
 
     useEffect(() => {
         dispatch(userActions.initUserData());
+        dispatch(fetchComletedTask());
+        dispatch(fetchTask());
     }, []);
 
     return (
