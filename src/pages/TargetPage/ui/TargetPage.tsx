@@ -6,6 +6,7 @@ import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Page } from "shared/ui/Page/Page";
 import { TargetForm } from "features/TargetForm/ui/TargetForm";
 import { healthTask } from "shared/variables/healtfTasks";
+import { TargetList } from "features/targetList";
 interface TargetPageProps {
     className?: string;
 }
@@ -21,8 +22,8 @@ export const TargetPage = memo(({ className }: TargetPageProps) => {
 
     return (
         <Page className={cls.TargetPage}>
-            <TargetForm/>
-            <WirtualList list={healthTask} className={cls.list} />
+            <TargetForm />
+            <TargetList className={cls.list} />
         </Page>
     );
 });
