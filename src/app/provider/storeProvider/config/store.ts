@@ -9,6 +9,7 @@ import { targetFormReducers } from "features/TargetForm";
 import { taskReducers } from "entities/Task/model/slice/taskSlice";
 import { $api } from "shared/api/api";
 import { completedTaskReducers } from "entities/CompletedTask";
+import { healthFormReducers } from "features/healthForm/model/slice/healthFormSlice";
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -21,7 +22,8 @@ export const createReduxStore = (
         progressForm: progressFormReducers,
         targetForm: targetFormReducers,
         task: taskReducers,
-        completedTask:completedTaskReducers,
+        completedTask: completedTaskReducers,
+        healthForm: healthFormReducers,
         ///
         [userApi.reducerPath]: userApi.reducer,
     };

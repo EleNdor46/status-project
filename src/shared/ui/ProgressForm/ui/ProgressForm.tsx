@@ -6,22 +6,26 @@ import {
     CircularProgressBar,
 } from "shared/ui/CircularProgressBar/CircularProgressBar";
 import { Input } from "shared/ui/Input/Input";
+import { useTheme } from "shared/hooks/useTheme/useTheme";
 
 interface ProgressFormProps {
     className?: string;
     value?: number;
     onChange?: (value: string) => void;
-    onClickBtn?:()=>void
+    onClickBtn?:()=>void,
+    theme:CircularBarTheme
 }
 
 export const ProgressForm = memo(
-    ({ className, value, onChange ,onClickBtn }: ProgressFormProps) => {
+    ({ className, value, onChange ,onClickBtn , theme}: ProgressFormProps) => {
+
+
         return (
             <div className={classNames(cls.ProgressForm, {}, [className])}>
                 <div className={cls.ProgressBar}>
                     <CircularProgressBar
                         value={Number(value)}
-                        theme={CircularBarTheme.TARGET_THEME}
+                        theme={theme}
                         size={260}
                     />
                 </div>

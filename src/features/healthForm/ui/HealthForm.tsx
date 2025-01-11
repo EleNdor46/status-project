@@ -2,26 +2,26 @@ import { memo, useCallback, useEffect } from "react";
 import { ProgressForm } from "shared/ui/ProgressForm/ui/ProgressForm";
 import { useDispatch, useSelector } from "react-redux";
 import { progressFormActions } from "entities/ProgressForm/model/slice/ProgressFormSlice";
-import { targetFormActions } from "../model/slice/targetFormSlice";
-import { getTargetFormValue } from "../model/selector/targetFormSelector";
-import { getProgressFormTarget } from "entities/ProgressForm";
 import { getTaskData } from "entities/Task";
 import { getCompletedTaskData } from "entities/CompletedTask";
-import { addTargetTask } from "../model/services/addTargetTask/addTargetTask";
+import { getHealthFormProgressValue } from "../model/selector/healthFormTaskSelector";
+import { getProgressFormHealth } from "entities/ProgressForm";
+import { healthFormActions } from "../model/slice/healthFormSlice";
+import { addHealthTask } from "../model/services/addHealthTask";
 import { CircularBarTheme } from "shared/ui/CircularProgressBar/CircularProgressBar";
-interface TargetFormProps {
+interface HealthFormProps {
     className?: string;
 }
 
-export const TargetForm = memo(({ className }: TargetFormProps) => {
+export const HealthForm = memo(({ className }: HealthFormProps) => {
     const dispatch = useDispatch();
-    const progressValue = useSelector(getTargetFormValue);
+    const progressValue = useSelector(getHealthFormProgressValue);
     const allTask = useSelector(getTaskData);
     const allCompletedTask = useSelector(getCompletedTaskData);
-    const formValue = useSelector(getProgressFormTarget);
+    const formValue = useSelector(getProgressFormHealth);
     useEffect(() => {
         dispatch(
-            targetFormActions.getProgressValue({
+            healthFormActions.getProgressValue({
                 task: allTask,
                 completedTask: allCompletedTask,
             })
@@ -30,14 +30,14 @@ export const TargetForm = memo(({ className }: TargetFormProps) => {
 
     const handleChange = useCallback(
         (value: string) => {
-            dispatch(progressFormActions.setTargetForm(value));
+            dispatch(progressFormActions.setHealthForm(value));
         },
         [dispatch]
     );
 
     const handleClick = useCallback(() => {
         if (!formValue) return null;
-        dispatch(addTargetTask());
+        dispatch(addHealthTask());
     }, [dispatch, formValue]);
 
     return (
@@ -45,7 +45,7 @@ export const TargetForm = memo(({ className }: TargetFormProps) => {
             onChange={handleChange}
             value={progressValue}
             onClickBtn={handleClick}
-            theme={CircularBarTheme.TARGET_THEME}
+            theme={CircularBarTheme.HEALTH_THEME}
         />
     );
 });

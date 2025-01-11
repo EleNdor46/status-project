@@ -1,9 +1,10 @@
-import { WirtualList } from "shared/ui/WirtualList/WirtualList";
 import cls from "./HealthPage.module.scss";
 import { memo, useEffect } from "react";
 import { useTheme } from "shared/hooks/useTheme/useTheme";
 import { Theme } from "app/provider/themeProvider/lib/themeContext";
-import { healthTask } from "shared/variables/healtfTasks";
+import { Page } from "shared/ui/Page/Page";
+import { HealthForm } from "features/healthForm";
+import { HealthList } from "features/healthList/ui/HealthList";
 interface HealthPageProps {
     className?: string;
 }
@@ -18,10 +19,9 @@ export const HealthPage = memo(({ className }: HealthPageProps) => {
     }, []);
 
     return (
-        <div className={cls.HealthPage}>
-            <div className={cls.list}>
-                <WirtualList list={healthTask} />
-            </div>
-        </div>
+        <Page className={cls.HealthPage}>
+            <HealthForm />
+            <HealthList className={cls.list} />
+        </Page>
     );
 });
